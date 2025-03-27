@@ -4,21 +4,38 @@ import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
 const LoginForm = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const { login } = useAuth();
-  const navigate = useNavigate();
+  const [nickname, setNickname] = useState("");
+const [password, setPassword] = useState("");
+const [error, setError] = useState("");
+const [message, setMessage] = useState(""); // Para manejar el mensaje de éxito o error
+const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const success = await login(username, password);
-    if (success) {
-      navigate("/dashboard");
-    } else {
-      setError("Usuario o contraseña incorrectos");
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch("http://localhost:8080/api/usuarios/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ nickname, password }),
+    });
+
+    if (!response.ok) {
+      const data = await response.json();
+      throw new Error(data.message); // Usamos el mensaje JSON en caso de error
     }
-  };
+
+    const data = await response.json();
+    console.log(data.message); // Ejemplo: 'Usuario logueado'
+    setMessage("Login exitoso!"); // Establecemos el mensaje de éxito
+    navigate("/dashboard"); // Redirige al dashboard
+  } catch (error) {
+    console.error("Error en la solicitud:", error);
+    setError(error.message);
+  }
+};
+  
 
   return (
     <div className="container">
@@ -27,10 +44,10 @@ const LoginForm = () => {
       <p>HPE CDS Tech Challenge</p>
       <form onSubmit={handleSubmit}>
         <input
-          placeholder="Nombre de usuario"
+          placeholder="Nickname"
           type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={nickname}
+          onChange={(e) => setNickname(e.target.value)}
           required
         />
         <input
