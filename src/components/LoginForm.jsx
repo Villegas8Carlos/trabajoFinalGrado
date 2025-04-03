@@ -22,12 +22,12 @@ const handleSubmit = async (e) => {
     });
 
     if (!response.ok) {
-      const data = await response.json();
-      throw new Error(data.message); // Usamos el mensaje JSON en caso de error
+      const text = await response.text();
+      throw new Error(text); // Usamos el mensaje JSON en caso de error
     }
 
-    const data = await response.json();
-    console.log(data.message); // Ejemplo: 'Usuario logueado'
+    const text = await response.text();
+    console.log(text); // Ejemplo: 'Usuario logueado'
     setMessage("Login exitoso!"); // Establecemos el mensaje de éxito
     navigate("/dashboard"); // Redirige al dashboard
   } catch (error) {
