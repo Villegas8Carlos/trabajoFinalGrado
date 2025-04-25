@@ -1,4 +1,4 @@
-import FormularioUsuario from "../components/FormularioUsuario";
+import FormularioUsuario from "../components/RegisterForm";
 
 const FormPage = () => {
   return (

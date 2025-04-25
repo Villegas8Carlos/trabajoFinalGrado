@@ -9,7 +9,7 @@ const Dashboard = () => {
     <div>
       <h2>Bienvenido, {user?.username}</h2>
       {user?.isAdmin && <p>Eres administrador.</p>}
-      <button onClick={() => { logout(); navigate("/"); }}>Cerrar sesión</button>
+      <button onClick={() => { logout(); navigate("/login"); }}>Cerrar sesión</button>
     </div>
   );
 };
