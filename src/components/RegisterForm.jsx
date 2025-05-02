@@ -37,14 +37,15 @@ const RegisterForm = () => {
         },
         body: JSON.stringify(formData),
       });
+
       if (!response.ok) {
         const errorData = await response.json();
-      
+
         if (errorData && typeof errorData === "object") {
           const errorListHtml = Object.entries(errorData)
-            .map(([field, message]) => `<li>${message}</li>`)
+            .map(([_, message]) => `<li>${message}</li>`)
             .join("");
-      
+
           Swal.fire({
             icon: "warning",
             title: "Errores de validación",
@@ -53,7 +54,7 @@ const RegisterForm = () => {
         } else {
           throw new Error("Error desconocido al registrar.");
         }
-      
+
         return;
       }
 
@@ -65,9 +66,9 @@ const RegisterForm = () => {
       });
 
       setTimeout(() => {
-        navigate("/");
+        navigate("/cuestionario", { state: { nickname: formData.nickname } });
       }, 2000);
-      
+
     } catch (error) {
       console.error("Error en el registro:", error);
       Swal.fire({
