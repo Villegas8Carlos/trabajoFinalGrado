@@ -14,7 +14,7 @@ const LoginForm = () => {
     e.preventDefault();
     const success = await login(username, password);
     if (success) {
-      navigate("/dashboard");
+      navigate("/main");
     } else {
       setError("Usuario o contraseña incorrectos");
     }
@@ -24,7 +24,7 @@ const LoginForm = () => {
     <div className="container">
       <img src="/images/" alt="logo" />
       <h2>¡Bienvenido!</h2>
-      <p>HPE CDS Tech Challenge</p>
+      <p>Nombre Gimnasio</p>
       <form onSubmit={handleSubmit}>
         <input
           placeholder="Nombre de usuario"
