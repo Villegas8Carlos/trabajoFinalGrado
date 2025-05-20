@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import LoginPage from "./pages/LoginPage";
-import Dashboard from "./pages/Dashboard";
+import FormPage from "./pages/FormPage";
+import MainPage from "./pages/MainPage";
+import DatosPersonales from "./pages/DatosPersonales";
 
 const App = () => {
   return (
@@ -9,7 +11,9 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<LoginPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/form" element={<FormPage />} />
+          <Route path="/main" element={<MainPage />} />
+          <Route path="/datos-personales" element={<DatosPersonales />} />
         </Routes>
       </Router>
     </AuthProvider>
