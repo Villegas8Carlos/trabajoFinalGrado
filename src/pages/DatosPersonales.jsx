@@ -19,7 +19,7 @@ const DatosPersonales = () => {
         <Navbar />
         <div className="datos-personales-container">
           <h2>Mis Datos Personales</h2>
-          <p>No has iniciado sesión. Por favor, <Link to="/">inicia sesión</Link> para ver tus datos personales completos.</p>
+          <p>No has iniciado sesión. Por favor, <Link to="/login">inicia sesión</Link> para ver tus datos personales completos.</p>
         </div>
       </>
     );

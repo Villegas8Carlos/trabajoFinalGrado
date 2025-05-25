@@ -27,7 +27,7 @@ const Navbar = () => {
       showConfirmButton: false,
       timer: 2000,
     });
-    navigate("/");
+    navigate("/main");
   };
 
   const toggleMenu = () => {
@@ -51,7 +51,7 @@ const Navbar = () => {
     <nav className="navbar">
       <ul className="nav-options">
         <li>
-          <Link to="/">
+          <Link to="/main">
             <img src={eatfit} alt="Inicio" className="navbar-logo" />
           </Link>
         </li>
