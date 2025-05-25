@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('https://cdstechchallenge.com/wp-content/uploads/2024/09/Img-retocada-fondo-premios-mod.jpg');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.datos-personales-container {
+  background-color: white;
+  padding: 2% 2%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  margin: 7% auto 2% auto;
+  text-align: left;
+}
+
+.datos-personales-container h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.datos-personales-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.datos-personales-container ul li {
+  margin-bottom: 0.7em;
+  font-size: 1.1em;
+}
+
+.datos-personales-container ul li strong {
+  width: 160px;
+  display: inline-block;
+}

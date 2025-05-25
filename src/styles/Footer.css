@@ -1,0 +1,32 @@
+.footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  box-sizing: border-box; /* 🛠️ clave para evitar que el padding cause desbordamiento */
+  overflow-x: hidden; /* opcional, previene scroll horizontal */
+}
+
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-icons img {
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.footer-icons img:hover {
+  transform: scale(1.1);
+}

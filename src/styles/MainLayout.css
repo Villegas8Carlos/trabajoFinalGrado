@@ -1,0 +1,18 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+/* Compensar altura del navbar fijo (ajusta si el navbar es más alto) */
+.content {
+  flex: 1;
+  padding: 2rem;
+  margin-top: 70px; /* misma altura que el navbar */
+}
