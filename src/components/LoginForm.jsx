@@ -25,7 +25,7 @@ const handleLogin = async (e) => {
 
     const user = await response.json();
     localStorage.setItem("user", JSON.stringify(user)); // ← Guardas el usuario
-    navigate("/main"); // Ya no necesitas pasar con state
+    navigate("/"); // Ya no necesitas pasar con state
   } catch (error) {
     console.error("Error en la solicitud:", error);
     setError(error.message);
