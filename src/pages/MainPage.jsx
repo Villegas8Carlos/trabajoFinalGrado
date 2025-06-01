@@ -20,11 +20,7 @@ const MainPage = () => {
 }, []);
 
   return (
-    <MainLayout>
-      {/* Aquí podrías meter contenido extra si quieres */}
-      <h1>EATFIT</h1>
-      <p>Bienvenido, te dejamos varios ejercicios.</p>
-    </MainLayout>
+    <MainLayout />
   );
 };
 

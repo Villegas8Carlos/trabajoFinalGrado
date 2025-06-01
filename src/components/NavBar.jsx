@@ -1,7 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import perfil from "../assets/perfil.jpg";
-import eatfit from "../assets/eatfit.jpg";
 import Swal from "sweetalert2";
 import "../styles/NavBar.css";
 
@@ -52,7 +50,7 @@ const Navbar = () => {
       <ul className="nav-options">
         <li>
           <Link to="/">
-            <img src={eatfit} alt="Inicio" className="navbar-logo" />
+            <img src="/images/eatfit.jpg" alt="Inicio" className="navbar-logo" />
           </Link>
         </li>
         <li>
@@ -61,11 +59,17 @@ const Navbar = () => {
         <li>
           <Link to="/calendario">Calendario</Link>
         </li>
+        <li>
+          <Link to="/foro">Foro</Link>
+        </li>
+        <li>
+          <Link to="/alimentos">Alimentos</Link>
+        </li>
       </ul>
 
       <div className="auth-status">
         <img
-          src={perfil}
+          src="/images/perfil.jpg"
           alt="Usuario"
           className="not-logged-img"
           onClick={toggleMenu}
