@@ -1,5 +1,5 @@
-import { useAuth } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+// src/pages/MainPage.jsx
+import MainLayout from "../components/MainLayout";
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
@@ -9,9 +9,9 @@ const Dashboard = () => {
     <div>
       <h2>Bienvenido, {user?.username}</h2>
       {user?.isAdmin && <p>Eres administrador.</p>}
-      <button onClick={() => { logout(); navigate("/"); }}>Cerrar sesión</button>
+      <button onClick={() => { logout(); navigate("/login"); }}>Cerrar sesión</button>
     </div>
   );
-};
+}
 
-export default Dashboard;
+export default MainPage;

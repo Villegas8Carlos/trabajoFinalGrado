@@ -1,0 +1,43 @@
+.mes {
+  margin-bottom: 2rem;
+}
+
+.dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.dia {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  user-select: none;
+}
+
+
+.nombre-dia {
+  font-weight: bold;
+  background-color: #ddd;
+}
+
+/* CalendarioPage.css */
+.dia.marcado {
+  background-color: green;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px; /* ajusta según el tamaño del día */
+  width: 30px;
+  height: 30px;
+  margin: 2px auto;
+  cursor: pointer;
+  user-select: none;
+}
+
+
