@@ -92,3 +92,17 @@ body {
     margin: 5px 0;
   }
   
+  .columna select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.columna select:focus {
+  border-color: #0077cc;
+  outline: none;
+}

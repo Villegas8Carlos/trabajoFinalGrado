@@ -32,7 +32,6 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // Cierra el menú si haces click fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       const menu = document.querySelector(".dropdown-menu");
@@ -45,6 +44,8 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
+  const premium = user?.premium || 0;
+
   return (
     <nav className="navbar">
       <ul className="nav-options">
@@ -53,18 +54,30 @@ const Navbar = () => {
             <img src="/images/eatfit.jpg" alt="Inicio" className="navbar-logo" />
           </Link>
         </li>
-        <li>
-          <Link to="/rutinas">Rutinas</Link>
-        </li>
-        <li>
-          <Link to="/calendario">Calendario</Link>
-        </li>
-        <li>
-          <Link to="/foro">Foro</Link>
-        </li>
-        <li>
-          <Link to="/alimentacion">Alimentos</Link>
-        </li>
+
+        {user && premium >= 1 && (
+          <li>
+            <Link to="/rutinas">Rutinas</Link>
+          </li>
+        )}
+
+        {user && premium >= 2 && (
+          <li>
+            <Link to="/calendario">Calendario</Link>
+          </li>
+        )}
+
+        {user && premium >= 3 && (
+          <li>
+            <Link to="/foro">Foro</Link>
+          </li>
+        )}
+
+        {user && premium >= 4 && (
+          <li>
+            <Link to="/alimentacion">Alimentos</Link>
+          </li>
+        )}
       </ul>
 
       <div className="auth-status">

@@ -18,12 +18,34 @@ const RegisterForm = () => {
     email: "",
     dni: "",
     peso: "",
-    premium: 0,
+    premium: 1,
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handlePremiumChange = (e) => {
+    const value = parseInt(e.target.value);
+    setFormData((prev) => ({ ...prev, premium: value }));
+
+    if (value !== 1) {
+      Swal.fire({
+        title: "Simulación de pago",
+        text: `Estás seleccionando el plan premium nivel ${value}. ¿Deseas continuar con el pago?`,
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonText: "Pagar",
+        cancelButtonText: "Cancelar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire("¡Pago exitoso!", "Tu plan premium ha sido activado.", "success");
+        } else {
+          setFormData((prev) => ({ ...prev, premium: 1 }));
+        }
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -65,10 +87,12 @@ const RegisterForm = () => {
         timer: 2000,
       });
 
+      const user = await response.json();
+    localStorage.setItem("user", JSON.stringify(user));
+    
       setTimeout(() => {
         navigate("/cuestionario", { state: { nickname: formData.nickname } });
       }, 2000);
-
     } catch (error) {
       console.error("Error en el registro:", error);
       Swal.fire({
@@ -95,6 +119,20 @@ const RegisterForm = () => {
 
             <label htmlFor="altura">Altura (cm):</label>
             <input type="number" id="altura" name="altura" required onChange={handleChange} />
+
+            <label htmlFor="premium">Nivel Premium:</label>
+            <select
+              id="premium"
+              name="premium"
+              value={formData.premium}
+              onChange={handlePremiumChange}
+              required
+            >
+              <option value={1}>1 - Básico (Gratis)</option>
+              <option value={2}>2 - Intermedio</option>
+              <option value={3}>3 - Avanzado</option>
+              <option value={4}>4 - Pro</option>
+            </select>
           </div>
 
           <div className="columna centro">
