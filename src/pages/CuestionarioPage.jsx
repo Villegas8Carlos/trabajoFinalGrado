@@ -1,9 +1,10 @@
 import CuestionarioForm from "../components/CuestionarioForm";
+import Navbar from "../components/NavBar"
+import Footer from "../components/Footer"
 
 const CuestionarioPage = () => {
   return (
     <div>
-<<<<<<< HEAD
       <header className="menu">
         <nav>
           <ul>
@@ -23,15 +24,8 @@ const CuestionarioPage = () => {
         <p>Iniciativa de </p>
         <p>© Copyright 2025 Empresa</p>
       </footer>
-=======
-      <CuestionarioForm />
->>>>>>> 55ab3b0 (Commit)
     </div>
   );
 };
 
-<<<<<<< HEAD
 export default CuestionarioPage;
-=======
-export default CuestionarioPage;
->>>>>>> 55ab3b0 (Commit)

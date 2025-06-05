@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import ForoAccordion from "../components/ForoAccordion";
-import CardWithModal from "../components/CardWithModal";
+import ForoAccordion from "./ForoAccordion";
+import CardWithModal from "./CardWithModal";
 import "../styles/Foro.css";
 
 export default function Foro() {

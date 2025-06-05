@@ -19,12 +19,29 @@
   margin-bottom: 0.25rem;
 }
 
-.aficiones {
-  font-size: 0.875rem;
-  color: gray;
-}
-
 .calorias {
   font-weight: bold;
   margin-top: 0.5rem;
+}
+
+.cardAlimentacion button {
+  background-color: #4CAF50;        /* Verde */
+  color: white;                    /* Texto blanco */
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.cardAlimentacion button:hover {
+  background-color: #45a049;       /* Verde más oscuro al hover */
+}
+
+.cardAlimentacion button:active {
+  background-color: #3e8e41;       /* Verde aún más oscuro al hacer click */
+  transform: scale(0.98);
 }

@@ -1,4 +1,4 @@
-import Foro from "../components/Foro";
+import Alimentacion from "../components/Alimentacion";
 import { useAuth } from '../context/AuthContext';
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
@@ -12,7 +12,7 @@ const ForoPage = () => {
   return (
     <div>
         <Navbar />
-        <Foro />
+        <Alimentacion />
         <Footer />
     </div>
   );

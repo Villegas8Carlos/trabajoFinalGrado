@@ -41,7 +41,7 @@ const DatosPersonales = () => {
           <li><strong>Peso (kg):</strong> {user.peso || "No disponible"}</li>
           <li><strong>Altura (cm):</strong> {user.altura || "No disponible"}</li>
           <li><strong>Dirección:</strong> {user.direccion || "No disponible"}</li>
-          <li><strong>Premium:</strong> {user.premium ? "Sí" : "No"}</li>
+          <li><strong>Premium:</strong> {"Premium de nivel "+user.premium}</li>
         </ul>
       </div>
     </>
