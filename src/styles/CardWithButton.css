@@ -1,15 +1,52 @@
-.card-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #007bff; /* azul bootstrap */
+.cardWB {
+  background: beige;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  width: 100%;
+  max-width: 250px;  /* Más pequeñas para que quepan 4 por fila */
+  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
+  margin: 0.5rem;
+}
+
+.cardWB:hover {
+  transform: scale(1.03);
+}
+
+.card-imageWB {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.cardWB h3 {
+  font-size: 1.1rem;
+  color: #222;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.cardWB p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.card-buttonWB {
+  margin-top: 1rem;
+  padding: 8px 16px;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 0.95rem;
   cursor: pointer;
-  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
-.card-button:hover {
+.card-buttonWB:hover {
   background-color: #0056b3;
 }

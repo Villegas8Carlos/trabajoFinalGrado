@@ -1,0 +1,109 @@
+.card-with-modal {
+  background: beige;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  max-width: 300px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card-with-modal .card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* Botón principal de la card */
+.card-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff; /* azul bootstrap */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+/* Modal overlay: fondo oscuro transparente */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal en sí: mismo fondo blanco y estilo de card */
+.modal-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Textarea dentro del modal */
+.modal-content textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+/* Botones del modal (enviar y cerrar) */
+.modal-content button {
+  margin: 0.25rem;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+/* Botón "Cerrar" con estilo gris */
+.btn-close {
+  background-color: #6c757d;
+}
+
+.btn-close:hover {
+  background-color: #5a6268;
+}
+
+/* Mensajes de error y éxito */
+.error-msg {
+  color: red;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.success-msg {
+  color: green;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}

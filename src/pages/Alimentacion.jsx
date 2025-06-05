@@ -1,6 +1,5 @@
 import AlimentacionCard from "../components/AlimentacionCard";
 import CaloriasCounter from "../components/CaloriasCounter";
-import "../styles/Alimentacion.css";
 
 const alimentos = [
   // Puedes personalizar estos datos

@@ -1,4 +1,4 @@
-.card {
+.cardAlimentacion {
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 1rem;
@@ -9,7 +9,7 @@
 
 .card img {
   width: 100%;
-  height: 130px;
+  height: 200px;
   object-fit: cover;
   margin-bottom: 0.5rem;
 }

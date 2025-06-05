@@ -1,17 +1,27 @@
-// src/pages/MainPage.jsx
+import React, { useEffect, useState } from "react";
 import MainLayout from "../components/MainLayout";
 
-const Dashboard = () => {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
+const MainPage = () => {
+  useEffect(() => {
+  const storedUser = localStorage.getItem("user");
+  if (storedUser) {
+    const user = JSON.parse(storedUser);
+    const id = user.nickname;
+    
+    fetch(`http://localhost:8080/api/calendario/addOrUpdateFechaActual/${id}`, {
+      method: "POST",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Fecha actual añadida o actualizada:", data);
+      })
+      .catch((err) => console.error("Error añadiendo fecha actual:", err));
+  }
+}, []);
 
   return (
-    <div>
-      <h2>Bienvenido, {user?.username}</h2>
-      {user?.isAdmin && <p>Eres administrador.</p>}
-      <button onClick={() => { logout(); navigate("/login"); }}>Cerrar sesión</button>
-    </div>
+    <MainLayout />
   );
-}
+};
 
-export default MainPage;
+export default MainPage;

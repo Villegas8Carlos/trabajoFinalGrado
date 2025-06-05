@@ -1,19 +1,31 @@
-.card {
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.cardNB {
+  background: beige;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  max-width: 340px; /* Más ancha */
+  min-width: 280px; /* Evita que se encojan demasiado */
   text-align: center;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
 }
 
-.card-image {
+.card-imageNB {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: 50%;
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.cardNB h3 {
+  font-size: 1.5rem;
+  margin: 0.75rem 0;
+  color: #222;
+  font-weight: bold;
+}
+
+.cardNB p {
+  font-size: 1.05rem;
+  color: #444;
 }
