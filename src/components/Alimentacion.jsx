@@ -41,7 +41,7 @@ export default function Dietas() {
     fetchDatos();
   }, []);
 
-  if (loading) return <p>Cargando dietas...</p>;
+  if (loading) return <img src="/images/loading.gif" alt="Cargando" />;
   if (error) return <p>Error: {error}</p>;
   if (!cuestionario) return <p>No se encontró cuestionario del usuario.</p>;
 

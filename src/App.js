@@ -8,6 +8,7 @@ import DatosPersonales from "./pages/DatosPersonales";
 import Foro from "./pages/ForoPage"
 import Alimentacion from "./pages/AlimentacionPage"
 import Calendario from "./pages/CalendarioPage"
+import RutinasPage from "./pages/RutinasPage";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/cuestionario" element={<Cuestionario />} />
           <Route path="/" element={<MainPage />} />
           <Route path="/datos-personales" element={<DatosPersonales />} />
+          <Route path="/rutinas" element={<RutinasPage />} />
           <Route path="/foro" element={<Foro />} />
           <Route path="/calendario" element={<Calendario />} />
           <Route path="/alimentacion" element={<Alimentacion />} />

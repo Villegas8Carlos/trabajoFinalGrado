@@ -55,27 +55,27 @@ const Navbar = () => {
           </Link>
         </li>
 
-        {user && premium >= 1 && (
+        {user && premium >= 0 && (
           <li>
             <Link to="/rutinas">Rutinas</Link>
           </li>
         )}
 
-        {user && premium >= 2 && (
+        {user && premium >= 1 && (
           <li>
             <Link to="/calendario">Calendario</Link>
           </li>
         )}
 
-        {user && premium >= 3 && (
+        {user && premium >= 2 && (
           <li>
             <Link to="/foro">Foro</Link>
           </li>
         )}
 
-        {user && premium >= 4 && (
+        {user && premium >= 0 && (
           <li>
-            <Link to="/alimentacion">Alimentos</Link>
+            <Link to="/alimentacion">Alimentación</Link>
           </li>
         )}
       </ul>

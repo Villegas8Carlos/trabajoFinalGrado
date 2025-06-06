@@ -30,7 +30,7 @@ const RegisterForm = () => {
     const value = parseInt(e.target.value);
     setFormData((prev) => ({ ...prev, premium: value }));
 
-    if (value !== 1) {
+    if (value !== 0) {
       Swal.fire({
         title: "Simulación de pago",
         text: `Estás seleccionando el plan premium nivel ${value}. ¿Deseas continuar con el pago?`,
@@ -128,10 +128,9 @@ const RegisterForm = () => {
               onChange={handlePremiumChange}
               required
             >
-              <option value={1}>1 - Básico (Gratis)</option>
-              <option value={2}>2 - Intermedio</option>
-              <option value={3}>3 - Avanzado</option>
-              <option value={4}>4 - Pro</option>
+              <option value={0}>0 - Básico (Gratis)</option>
+              <option value={1}>1 - Intermedio</option>
+              <option value={2}>2 - Avanzado</option>
             </select>
           </div>
 

@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import MainLayout from "../components/MainLayout";
+import Navbar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 const MainPage = () => {
   useEffect(() => {
@@ -20,7 +22,11 @@ const MainPage = () => {
 }, []);
 
   return (
-    <MainLayout />
+    <>
+      <Navbar />
+      <MainLayout />
+      <Footer />
+    </>
   );
 };
 
