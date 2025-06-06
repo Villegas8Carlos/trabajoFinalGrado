@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../components/NavBar"; // Ajusta la ruta según dónde tengas Navbar
+import Navbar from "./NavBar"; // Ajusta la ruta según dónde tengas Navbar
 import "../styles/DatosPersonales.css";
 
 const DatosPersonales = () => {

@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import LoginPage from "./pages/LoginPage";
-import Register from "./pages/RegisterPage";
-import Cuestionario from "./pages/CuestionarioPage";
+import RegisterPage from "./pages/RegisterPage";
+import CuestionarioPage from "./pages/CuestionarioPage";
 import MainPage from "./pages/MainPage";
-import DatosPersonales from "./pages/DatosPersonales";
-import Foro from "./pages/ForoPage"
-import Alimentacion from "./pages/AlimentacionPage"
-import Calendario from "./pages/CalendarioPage"
+import DatosPersonalesPage from "./pages/DatosPersonalesPage";
+import ForoPage from "./pages/ForoPage"
+import AlimentacionPage from "./pages/AlimentacionPage"
+import CalendarioPage from "./pages/CalendarioPage"
 import RutinasPage from "./pages/RutinasPage";
 
 const App = () => {
@@ -16,14 +16,14 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/cuestionario" element={<Cuestionario />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/cuestionario" element={<CuestionarioPage />} />
           <Route path="/" element={<MainPage />} />
-          <Route path="/datos-personales" element={<DatosPersonales />} />
+          <Route path="/datos-personales" element={<DatosPersonalesPage />} />
           <Route path="/rutinas" element={<RutinasPage />} />
-          <Route path="/foro" element={<Foro />} />
-          <Route path="/calendario" element={<Calendario />} />
-          <Route path="/alimentacion" element={<Alimentacion />} />
+          <Route path="/foro" element={<ForoPage />} />
+          <Route path="/calendario" element={<CalendarioPage />} />
+          <Route path="/alimentacion" element={<AlimentacionPage />} />
         </Routes>
       </Router>
     </AuthProvider>

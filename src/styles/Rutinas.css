@@ -4,8 +4,9 @@
   max-width: 1000px;
   width: 90%;
   margin: 0 auto;
+  position: relative; /* Necesario para posicionar las flechas */
+  overflow: visible;  /* ¡Esto permite mostrar las flechas aunque estén fuera! */
 }
-
 .swiper-ejercicios {
   margin-top: 1.5rem;
 }
@@ -36,3 +37,4 @@
   object-fit: cover;
   border-radius: 12px;
 }
+

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from '../context/AuthContext';
 import "../styles/LoginForm.css";
 
 const LoginForm = () => {
@@ -35,9 +34,9 @@ const handleLogin = async (e) => {
 
 return (
   <div className="container">
-    <img src="/images/" alt="logo" />
+    <img src="/images/eatfit_login.jpg" alt="logo" />
     <h2>¡Bienvenido!</h2>
-    <p>HPE CDS Tech Challenge</p>
+    <p>EATFIT</p>
     <form onSubmit={handleLogin}>
       <input
         placeholder="Nickname"

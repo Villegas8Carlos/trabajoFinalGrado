@@ -5,9 +5,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-icons">
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <img src="/images/twitter.png" alt="Twitter" />
+          <img src="/images/x.png" alt="Twitter" />
         </a>
-        <img src="/images/logo-footer.png" alt="Logo" />
+        <img src="/images/eatfit.jpg" alt="Logo" />
         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
           <img src="/images/linkedin.png" alt="LinkedIn" />
         </a>
