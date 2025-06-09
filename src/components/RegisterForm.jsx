@@ -18,7 +18,7 @@ const RegisterForm = () => {
     email: "",
     dni: "",
     peso: "",
-    premium: 0
+    premium: 0,
   });
 
   const handleChange = (e) => {
@@ -29,27 +29,59 @@ const RegisterForm = () => {
   const handlePremiumChange = (e) => {
     const value = parseInt(e.target.value);
     setFormData((prev) => ({ ...prev, premium: value }));
+  };
 
-    if (value !== 0) {
-      Swal.fire({
-        title: "Simulación de pago",
-        text: `Estás seleccionando el plan premium nivel ${value}. ¿Deseas continuar con el pago?`,
-        icon: "info",
-        showCancelButton: true,
-        confirmButtonText: "Pagar",
-        cancelButtonText: "Cancelar",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire("¡Pago exitoso!", "Tu plan premium ha sido activado.", "success");
-        } else {
-          setFormData((prev) => ({ ...prev, premium: 0 }));
-        }
-      });
+  // Función para calcular edad a partir de fecha de nacimiento
+  const calcularEdad = (fechaNacimiento) => {
+    const hoy = new Date();
+    const nacimiento = new Date(fechaNacimiento);
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+    const m = hoy.getMonth() - nacimiento.getMonth();
+    if (m < 0 || (m === 0 && hoy.getDate() < nacimiento.getDate())) {
+      edad--;
     }
+    return edad;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validar edad mínima 15 años
+    if (!formData.fecha_nacimiento) {
+      await Swal.fire("Error", "Por favor, ingresa la fecha de nacimiento.", "error");
+      return;
+    }
+    const edad = calcularEdad(formData.fecha_nacimiento);
+    if (edad < 15) {
+      await Swal.fire(
+        "Edad no permitida",
+        "Debes tener al menos 15 años para registrarte.",
+        "warning"
+      );
+      return;
+    }
+
+    // Validar plan premium
+    if (formData.premium !== 0) {
+      const result = await Swal.fire({
+        title: "Simulación de pago",
+        text: `Estás seleccionando el plan premium nivel ${formData.premium}. ¿Deseas continuar con el pago?`,
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonText: "Pagar",
+        cancelButtonText: "Cancelar",
+      });
+
+      if (!result.isConfirmed) {
+        return;
+      }
+
+      await Swal.fire(
+        "¡Pago exitoso!",
+        "Tu plan premium ha sido activado.",
+        "success"
+      );
+    }
 
     try {
       const response = await fetch("http://localhost:8080/api/usuarios", {
@@ -88,8 +120,8 @@ const RegisterForm = () => {
       });
 
       const user = await response.json();
-    localStorage.setItem("user", JSON.stringify(user));
-    
+      localStorage.setItem("user", JSON.stringify(user));
+
       setTimeout(() => {
         navigate("/cuestionario", { state: { nickname: formData.nickname } });
       }, 2000);
@@ -109,16 +141,40 @@ const RegisterForm = () => {
         <div className="contenedor">
           <div className="columna izquierda">
             <label htmlFor="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required onChange={handleChange} />
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              onChange={handleChange}
+            />
 
             <label htmlFor="nickname">Nickname:</label>
-            <input type="text" id="nickname" name="nickname" required onChange={handleChange} />
+            <input
+              type="text"
+              id="nickname"
+              name="nickname"
+              required
+              onChange={handleChange}
+            />
 
             <label htmlFor="fecha_nacimiento">Fecha de nacimiento:</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required onChange={handleChange} />
+            <input
+              type="date"
+              id="fecha_nacimiento"
+              name="fecha_nacimiento"
+              required
+              onChange={handleChange}
+            />
 
             <label htmlFor="altura">Altura (cm):</label>
-            <input type="number" id="altura" name="altura" required onChange={handleChange} />
+            <input
+              type="number"
+              id="altura"
+              name="altura"
+              required
+              onChange={handleChange}
+            />
 
             <label htmlFor="premium">Nivel Premium:</label>
             <select
@@ -136,27 +192,70 @@ const RegisterForm = () => {
 
           <div className="columna centro">
             <label htmlFor="apellidos">Apellidos:</label>
-            <input type="text" id="apellidos" name="apellidos" required onChange={handleChange} />
+            <input
+              type="text"
+              id="apellidos"
+              name="apellidos"
+              required
+              onChange={handleChange}
+            />
 
             <label htmlFor="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required onChange={handleChange} />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              onChange={handleChange}
+            />
 
             <label htmlFor="tlf">Teléfono:</label>
-            <input type="tel" id="tlf" name="tlf" required onChange={handleChange} />
+            <input
+              type="tel"
+              id="tlf"
+              name="tlf"
+              required
+              onChange={handleChange}
+            />
 
             <label htmlFor="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion" required onChange={handleChange} />
+            <input
+              type="text"
+              id="direccion"
+              name="direccion"
+              required
+              onChange={handleChange}
+            />
           </div>
 
           <div className="columna derecha">
             <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required onChange={handleChange} />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              onChange={handleChange}
+            />
 
             <label htmlFor="dni">DNI:</label>
-            <input type="text" id="dni" name="dni" required onChange={handleChange} />
+            <input
+              type="text"
+              id="dni"
+              name="dni"
+              required
+              onChange={handleChange}
+            />
 
             <label htmlFor="peso">Peso (kg):</label>
-            <input type="number" id="peso" name="peso" step="0.1" required onChange={handleChange} />
+            <input
+              type="number"
+              id="peso"
+              name="peso"
+              step="0.1"
+              required
+              onChange={handleChange}
+            />
 
             <button type="submit" className="button button-register">
               REGISTRAR
