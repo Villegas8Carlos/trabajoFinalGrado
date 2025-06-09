@@ -9,20 +9,15 @@ const MainLayout = ({ children }) => {
     <main>
       <div className="three-column-layout">
         <CardNB
-          title="Nutrición"
-          description="En EatFit creemos que el equilibrio entre una buena nutrición y 
-          el entrenamiento constante es la clave para transformar tu cuerpo y tu estilo de vida."
+          title="Nutrición y Entrenamiento"
+          description="En EatFit combinamos una alimentación saludable con entrenamientos 
+          efectivos para ayudarte a lograr tu mejor versión. Energía, fuerza y bienestar 
+          en un solo lugar."
           image="/images/nutricion.jpg"
         />
 
         <Carousel />
 
-        <CardNB
-          title="Entrenamiento"
-          description="El ejercicio constante no solo fortalece tu cuerpo, 
-          también construye disciplina, energía y bienestar desde adentro hacia afuera."
-          image="/images/entrenamiento.jpg"
-        />
       </div>
 
       <section className="content">{children}</section>

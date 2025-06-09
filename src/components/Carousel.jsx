@@ -4,23 +4,23 @@ import "../styles/Carousel.css";
 const Carousel = () => {
   const slides = [
     {
-      img: "/images/foto_carrusel_1.jpg",
+      img: "/images/carrusel/foto_carrusel_1.jpg",
       caption: "Transforma tu cuerpo, transforma tu vida.",
     },
     {
-      img: "/images/foto_carrusel_2.jpg",
+      img: "/images/carrusel/foto_carrusel_2.jpg",
       caption: "Entrena con propósito en EatFit.",
     },
     {
-      img: "/images/foto_carrusel_3.jpg",
+      img: "/images/carrusel/foto_carrusel_3.jpg",
       caption: "Fuerza, energía y bienestar cada día.",
     },
     {
-      img: "/images/foto_carrusel_4.jpg",
+      img: "/images/carrusel/foto_carrusel_4.jpg",
       caption: "Tu mejor versión empieza en EatFit.",
     },
     {
-      img: "/images/foto_carrusel_5.jpg",
+      img: "/images/carrusel/foto_carrusel_5.jpg",
       caption: "EatFit: Donde la comida sana y el fitness se unen.",
     },
   ];
@@ -53,11 +53,9 @@ const Carousel = () => {
             className={`carousel-image ${i === index ? "active" : ""}`}
           />
         ))}
-        <button onClick={prev} aria-label="Anterior">‹</button>
-        <button onClick={next} aria-label="Siguiente">›</button>
+
       </div>
 
-      {/* Texto fuera del carrusel */}
       <p className="carousel-caption">{slides[index].caption}</p>
     </div>
   );
