@@ -59,3 +59,15 @@
   height: auto;
   display: block;
 }
+
+.premium-info {
+  max-width: 1200px;
+  margin: 40px auto 20px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000; /* Negro puro */
+}
+
+
