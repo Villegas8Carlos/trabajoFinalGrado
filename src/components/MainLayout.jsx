@@ -65,7 +65,6 @@ const MainLayout = ({ children }) => {
 
               if (!response.ok) throw new Error("Error al actualizar el usuario");
 
-              const data = await response.json();
               Swal.fire({
                 title: "Simulación de pago",
                 text: `Estás seleccionando el plan premium nivel 0. ¿Deseas continuar con el pago?`,
@@ -119,8 +118,7 @@ const MainLayout = ({ children }) => {
               });
 
               if (!response.ok) throw new Error("Error al actualizar el usuario");
-
-              const data = await response.json();
+              
               Swal.fire({
                 title: "Simulación de pago",
                 text: `Estás seleccionando el plan premium nivel 1. ¿Deseas continuar con el pago?`,
@@ -176,7 +174,7 @@ const MainLayout = ({ children }) => {
 
               if (!response.ok) throw new Error("Error al actualizar el usuario");
 
-              const data = await response.json();
+            
               Swal.fire({
                 title: "Simulación de pago",
                 text: `Estás seleccionando el plan premium nivel 2. ¿Deseas continuar con el pago?`,
