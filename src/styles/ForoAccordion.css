@@ -1,24 +1,29 @@
 .accordion {
-  background-color: white; /* Fondo blanco para cada acordeón */
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
   overflow: hidden;
-  border: 1px solid #ddd;
+  transition: transform 0.2s ease;
+  text-align: center; /* Centra el contenido */
+}
+
+.accordion:hover {
+  transform: scale(1.01);
+  background-color: #f9f9f9;
 }
 
 /* Botón que muestra el título */
 .accordion-button {
   width: 100%;
-  text-align: left;
-  padding: 1rem 1.25rem;
-  background-color: #fff;
+  text-align: center; /* Centra el texto */
+  padding: 1.2rem 1rem;
+  background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
   font-weight: 600;
-  font-size: 1.1rem;
-  color: #222;
-  border-bottom: 1px solid #eee;
+  font-size: 1.15rem;
+  color: #2c3e50;
   transition: background-color 0.3s ease;
 }
 
@@ -28,10 +33,10 @@
 
 /* Contenido del acordeón */
 .accordion-content {
-  padding: 1rem 1.25rem;
+  padding: 1rem 1.5rem;
   color: #444;
   font-size: 1rem;
   background-color: #fafafa;
-  border-top: none;
-  line-height: 1.5;
+  line-height: 1.6;
+  text-align: center;
 }

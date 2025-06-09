@@ -1,15 +1,13 @@
-import { useState } from "react";
+// ForoAccordion.jsx
 import "../styles/ForoAccordion.css";
 
-export default function ForoAccordion({ titulo, contenido }) {
-  const [abierto, setAbierto] = useState(false);
-
+export default function ForoAccordion({ titulo, contenido, isOpen, onToggle }) {
   return (
     <div className="accordion">
-      <button onClick={() => setAbierto(!abierto)} className="accordion-button">
+      <button className="accordion-button" onClick={onToggle}>
         {titulo}
       </button>
-      {abierto && <div className="accordion-content">{contenido}</div>}
+      {isOpen && <div className="accordion-content">{contenido}</div>}
     </div>
   );
 }

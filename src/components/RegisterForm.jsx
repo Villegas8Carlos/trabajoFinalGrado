@@ -18,7 +18,7 @@ const RegisterForm = () => {
     email: "",
     dni: "",
     peso: "",
-    premium: 1,
+    premium: 0
   });
 
   const handleChange = (e) => {
@@ -42,7 +42,7 @@ const RegisterForm = () => {
         if (result.isConfirmed) {
           Swal.fire("¡Pago exitoso!", "Tu plan premium ha sido activado.", "success");
         } else {
-          setFormData((prev) => ({ ...prev, premium: 1 }));
+          setFormData((prev) => ({ ...prev, premium: 0 }));
         }
       });
     }

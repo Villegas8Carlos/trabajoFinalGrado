@@ -19,17 +19,17 @@
   max-width: 1100px;
 }
 
-/* Layout de 3 columnas */
 .foro-layout {
   display: flex;
   justify-content: space-between;
-  align-items: stretch; /* <<< esto estira las columnas para que tengan misma altura */
+  align-items: stretch;
   width: 100%;
   gap: 1rem;
   max-width: 1100px;
-  height: 600px; /* <<< define una altura común para igualar las 3 columnas */
+  /* height: 600px; */  /* ELIMINAR esta línea */
   box-sizing: border-box;
 }
+
 
 /* Tarjetas laterales */
 .foro-card.left,
@@ -49,11 +49,10 @@
   padding-right: 1rem;
 }
 
-/* Contenedor de acordeones (centro) */
 .foro-acordeones {
   flex: 1;
   height: 100%; /* <<< se iguala en altura con las otras columnas */
-  overflow-y: auto;
+  /* overflow-y: auto; */  /* Comenta o elimina esta línea */
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -67,24 +66,28 @@
   margin: 1rem 0;
 }
 
-/* Estilo individual de los acordeones */
-.accordion {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 1rem;
-}
-
 .accordion-button {
   width: 100%;
-  background: transparent;
+  background-color: #fff;
   border: none;
+  cursor: pointer;
   font-weight: 600;
   font-size: 1.1rem;
-  cursor: pointer;
+  color: #222;
+
+  /* CENTRADO */
+  display: flex;
+  align-items: center;     /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+
+  padding: 0.5rem 1rem;     /* Ajusta el padding: menos padding arriba */
+  min-height: 60px;         /* Puedes ajustar esto si quieres uniformidad */
   text-align: center;
-  padding: 0.5rem 0;
+
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease;
 }
+
 
 .accordion-content {
   margin-top: 0.75rem;
